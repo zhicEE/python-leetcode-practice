@@ -1,4 +1,3 @@
-# Day 1: Python basics
 # Topics: for loop, if statement, list, count, min value
 
 # A
