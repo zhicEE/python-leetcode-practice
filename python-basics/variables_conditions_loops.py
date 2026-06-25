@@ -1,5 +1,3 @@
-# Topics: for loop, if statement, list, count, min value
-
 # A
 for i in range(1, 11):
     print(i)
