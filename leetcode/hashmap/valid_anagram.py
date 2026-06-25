@@ -1,3 +1,4 @@
+# LeetCode 242 - Valid Anagram
 # manual test
 s = "anagram"
 t = "nagaram"
