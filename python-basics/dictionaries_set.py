@@ -1,15 +1,15 @@
-#A Get a value from a dictionary
+# A. Get a value from a dictionary
 ages = {
     "Alice": 20,
     "Bob": 21
 }
 print(ages["Bob"])
 
-#B Add a new key-value pair to a dictionary
+# B. Add a new key-value pair to a dictionary
 ages["Charlie"] = 19
 print(ages)
 
-#C1 Check duplicates - my original solution
+# C1. Check duplicates - my original solution
 nums = [1, 2, 3, 2]
 seen = set()
 for i in nums:
@@ -18,7 +18,7 @@ for i in nums:
             print("True")
     seen.add(i)
 
-#C2 Check duplicates - improved solution
+# C2. Check duplicates - improved solution
 nums = [1, 2, 3, 2]
 seen = set()
 has_duplicate = False
@@ -29,7 +29,7 @@ for num in nums:
     seen.add(num)
 print(has_duplicate)
 
-#D Count how many times each number appears
+# D. Count how many times each number appears
 counts = {}
 nums = [1, 2, 2, 3, 3, 3]
 for num in nums:
