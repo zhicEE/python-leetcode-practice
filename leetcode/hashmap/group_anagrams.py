@@ -1,76 +1,15 @@
-from collections import defaultdict
+# LeetCode 49 - Group Anagrams
+# word → key → groups[key].append(word)
+
+from collections import defaultdict 
 
 def groupAnagrams(strs):
-
-    groups = defaultdict(list)
-
-    for word in strs:
-        key = "".join(sorted(word))
-        groups[key].append(word)
-        
-
-    return list(groups)
-
-print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-from collections import defaultdict
-
-def groupAnagrams(strs):
-
-    groups = defaultdict(list)
+    groups = defaultdict(list) # auto-creates empty list for new keys
 
     for word in strs:
-        key = "".join(sorted(word))
+        key = "".join(sorted(word)) # join turns list into string key
         groups[key].append(word)
     return list(groups.values())
     
-print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
-'''
+if __name__ == "__main__":
+    print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))

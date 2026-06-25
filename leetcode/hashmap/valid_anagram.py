@@ -1,4 +1,5 @@
 # LeetCode 242 - Valid Anagram
+
 # manual test
 s = "anagram"
 t = "nagaram"
@@ -40,5 +41,6 @@ def isAnagram(s, t):
     return True
 
 # test
-print(isAnagram("anagram", "nagaram"))
-print(isAnagram("rat", "car"))
+if __name__ == "__main__":
+    print(isAnagram("anagram", "nagaram"))
+    print(isAnagram("rat", "car"))
