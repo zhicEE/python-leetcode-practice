@@ -14,3 +14,18 @@ for i, num in enumerate(nums):
         break
 
     seen[num] = i
+
+# 2026-07-26 Review
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+
+        seen = {}
+
+        for index, num in enumerate(nums):
+
+            needed = target - num
+
+            if needed in seen:
+                return(seen[needed], index)
+
+        seen[num] = index
