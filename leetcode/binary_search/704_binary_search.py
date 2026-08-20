@@ -60,3 +60,9 @@ def search(nums: list[int], target: int) -> int:
     # Mistakes:
     # - Initially confused time complexity with O(n).
     # - Need to distinguish execution steps from extra space.
+
+
+# 2026-08-20 Review
+# Mistake:
+# - Used len(nums) instead of len(nums)-1
+# - Confused search condition with value comparison
