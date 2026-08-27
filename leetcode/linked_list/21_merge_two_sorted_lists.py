@@ -26,8 +26,13 @@ Observed mistake:
 - Initially confused changing tail.next with moving tail. Setting tail.next
   connects a node; assigning tail = tail.next moves the tail pointer.
 
+Review history:
+- 2026-08-27: Closed-book rewrite passed ordinary, one-empty, and both-empty
+  cases. The pointer explanation and time complexity were corrected during
+  review.
+
 Next review:
-2026-08-24
+2026-09-03
 
 Similar problem:
 LeetCode 23 - Merge k Sorted Lists
@@ -62,5 +67,25 @@ class Solution:
             tail = tail.next
 
         tail.next = list1 or list2
-        
+
         return dummy.next
+
+
+# 2026-08-27 Review
+def merge_two_lists_review(list1, list2):
+    dummy = ListNode()
+    tail = dummy
+
+    while list1 and list2:
+        if list1.val <= list2.val:
+            tail.next = list1
+            list1 = list1.next
+        else:
+            tail.next = list2
+            list2 = list2.next
+
+        tail = tail.next
+
+    tail.next = list1 or list2
+
+    return dummy.next
