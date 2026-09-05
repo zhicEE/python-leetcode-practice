@@ -25,14 +25,20 @@ Space: O(1)
 Observed mistake:
 - Initially confused changing tail.next with moving tail. Setting tail.next
   connects a node; assigning tail = tail.next moves the tail pointer.
+- In the 2026-09-04 review, the first attempt used `List.Node`, did not advance
+  the selected source-list pointer, and placed the tail movement outside the
+  loop. These were corrected after targeted hints.
 
 Review history:
 - 2026-08-27: Closed-book rewrite passed ordinary, one-empty, and both-empty
   cases. The pointer explanation and time complexity were corrected during
   review.
+- 2026-09-04: The corrected closed-book rewrite passed ordinary, one-empty,
+  and both-empty cases. The user then correctly distinguished changing the
+  link from moving `tail` and gave O(n + m) time and O(1) additional space.
 
 Next review:
-2026-09-03
+2026-09-05
 
 Similar problem:
 LeetCode 23 - Merge k Sorted Lists
@@ -83,6 +89,26 @@ def merge_two_lists_review(list1, list2):
         else:
             tail.next = list2
             list2 = list2.next
+
+        tail = tail.next
+
+    tail.next = list1 or list2
+
+    return dummy.next
+
+
+# 2026-09-04 Review
+def merge_two_lists_review_2(list1, list2):
+    dummy = ListNode()
+    tail = dummy
+
+    while list1 and list2:
+        if list1.val > list2.val:
+            tail.next = list2
+            list2 = list2.next
+        else:
+            tail.next = list1
+            list1 = list1.next
 
         tail = tail.next
 
