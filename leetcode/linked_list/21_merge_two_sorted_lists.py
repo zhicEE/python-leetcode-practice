@@ -115,3 +115,24 @@ def merge_two_lists_review_2(list1, list2):
     tail.next = list1 or list2
 
     return dummy.next
+
+
+# 2026-09-06 Review
+def merge_two_lists_review_3(list1, list2):
+    dummy = ListNode()
+    tail = dummy
+
+    while list1 and list2:
+
+        if list1.val > list2.val:
+            tail.next = list2
+            list2 = list2.next
+        else:
+            tail.next = list1
+            list1 = list1.next
+
+        tail = tail.next
+
+    tail.next = list1 or list2
+
+    return dummy.next
