@@ -88,3 +88,8 @@ def findMaxAverage(nums, k):
         max_sum = max(max_sum, window_sum)
 
     return max_sum / k
+
+
+# 2026-09-19 Review
+# Key mistakes: Start the loop at k; remove nums[i-k], not nums[k-i].
+# The nums[:k] slice uses O(k) extra space, not O(1).
