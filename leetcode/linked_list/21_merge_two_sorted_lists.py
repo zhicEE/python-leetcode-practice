@@ -37,9 +37,6 @@ Review history:
   and both-empty cases. The user then correctly distinguished changing the
   link from moving `tail` and gave O(n + m) time and O(1) additional space.
 
-Next review:
-2026-09-05
-
 Similar problem:
 LeetCode 23 - Merge k Sorted Lists
 """
@@ -136,3 +133,8 @@ def merge_two_lists_review_3(list1, list2):
     tail.next = list1 or list2
 
     return dummy.next
+
+
+# 2026-09-19 Review
+# Key mistakes: Initialize tail = dummy; add the missing while colon.
+# Complete the remaining-list expression and return dummy.next.
