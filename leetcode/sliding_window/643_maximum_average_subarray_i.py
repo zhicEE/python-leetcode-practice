@@ -93,3 +93,21 @@ def findMaxAverage(nums, k):
 # 2026-09-19 Review
 # Key mistakes: Start the loop at k; remove nums[i-k], not nums[k-i].
 # The nums[:k] slice uses O(k) extra space, not O(1).
+
+
+# 2026-09-22 Review
+# Key mistakes: Used slicing despite the no-slice constraint and initially set max_sum before building the first real window.
+# Note: Loop-based initialization avoids a temporary k-element list, keeping extra space O(1) instead of O(k).
+def find_max_average_review_no_slice(nums: list[int], k: int) -> float:
+    window_sum = 0
+
+    for i in range(k):
+        window_sum = window_sum + nums[i]
+
+    max_sum = window_sum
+
+    for i in range(k, len(nums)):
+        window_sum = window_sum + nums[i] - nums[i-k]
+        max_sum = max(max_sum, window_sum)
+
+    return max_sum / k
