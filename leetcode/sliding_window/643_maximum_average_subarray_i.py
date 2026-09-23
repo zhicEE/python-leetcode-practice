@@ -111,3 +111,6 @@ def find_max_average_review_no_slice(nums: list[int], k: int) -> float:
         max_sum = max(max_sum, window_sum)
 
     return max_sum / k
+
+# 2026-09-23 Review
+# Key mistakes: Used invalid range syntax and added k instead of nums[i] while building the first window; misspelled the function name.
