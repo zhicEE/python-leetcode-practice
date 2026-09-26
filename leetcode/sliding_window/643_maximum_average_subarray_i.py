@@ -15,7 +15,8 @@ Key idea:
 
 Complexity:
 Time: O(n)
-Space: O(1)
+Auxiliary space: O(k) for Solution because nums[:k] creates a list.
+Auxiliary space: O(1) for the no-slice review function below.
 """
 
 class Solution:
@@ -114,3 +115,6 @@ def find_max_average_review_no_slice(nums: list[int], k: int) -> float:
 
 # 2026-09-23 Review
 # Key mistakes: Used invalid range syntax and added k instead of nums[i] while building the first window; misspelled the function name.
+
+# 2026-09-26 Review
+# Key mistakes: None in the first attempt.
