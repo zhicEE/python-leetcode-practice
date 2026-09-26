@@ -138,3 +138,6 @@ def merge_two_lists_review_3(list1, list2):
 # 2026-09-19 Review
 # Key mistakes: Initialize tail = dummy; add the missing while colon.
 # Complete the remaining-list expression and return dummy.next.
+
+# 2026-09-26 Review
+# Key mistakes: Did not advance the selected source pointer after linking its node.
